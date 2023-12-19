@@ -1,0 +1,193 @@
+<!-- ===========================================================================================================================
+   Objectif(s)			: Structuration de la page
+   Auteur 				: Alain CASARA
+   Date de création		: Août 2023
+   Date de modification : 
+	 =========================================================================================================================== -->
+
+<!DOCTYPE html>
+<html lang = "fr"  xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org">
+
+<!-- ===========================================================================================================================
+	 Entête de la page
+	 =========================================================================================================================== -->
+<head>
+
+	<!-- encodage des caractères -->
+	<meta charset = "utf-8" />
+	
+	<!-- onglet du navigateur (image et titre) -->
+	<link rel = "icon" type = "image/png" id = "tabLogo" href = "" /> <!-- attribut href défini dynamiquement en JavaScript  -->
+	<title>Ag'Immo</title>
+	<!-- feuilles de style css -->
+	<link rel = "stylesheet" th:href="@{/css/configuration.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/generalLayout.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/header.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/desktopMenu.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/topContent.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/content.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/footer.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/input.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/miseEnForme.css}"/>
+	<link rel = "stylesheet" th:href="@{/css/font-awesome.css}"/>
+	<!-- javascript -->
+	<script th:src="@{/js/configuration.js}"></script>
+	<script th:src="@{/js/content.js}"></script>
+	<script th:src="@{/js/topContent.js}"></script>
+	<script th:src="@{/js/footer.js}"></script>
+	<script th:src="@{/js/picture.js}"></script>
+	<script th:src="@{/js/node.js}"></script>
+	<script th:src="@{/js/string.js}"></script>
+	<script th:src="@{/js/desktopMenu.js}"></script>
+	<script th:src="@{/js/input.js}"></script>
+	<!-- librairie -->
+	<script src = "./library/jQuery/jQuery3.5.1.min.js"></script>
+</head>
+
+<body>
+
+<header>
+<!-- ===========================================================================================================================
+	 Premier bloc du header
+	 =========================================================================================================================== -->
+	<div>
+		<a class = "floatRight"
+		   onmouseover = "this.firstElementChild.src = './picture/general/header/connexion2.png'"
+		   onmouseout  = "this.firstElementChild.src = './picture/general/header/connexion1.png'">
+			<img alt = "" src = "./picture/general/header/connexion1.png" />
+			<span>Nos agences</span>
+		</a>
+		<a class = "floatRight"
+		   onmouseover = "this.firstElementChild.src = './picture/general/header/contact2.png'"
+		   onmouseout  = "this.firstElementChild.src = './picture/general/header/contact1.png'">
+			<img alt = "" src = "./picture/general/header/contact1.png" />
+			<span>Nous contacter</span>
+		</a>
+		<a class = "floatRight"
+		   onmouseover = "this.firstElementChild.src = './picture/general/header/notre_equipe2.png'"
+		   onmouseout  = "this.firstElementChild.src = './picture/general/header/notre_equipe1.png'">
+			<img alt = "" src = "./picture/general/header/notre_equipe1.png" />
+			<span>Notre équipe</span>
+		</a>
+		<a>
+			<img alt = "" id = "logo" src="./picture/logo/society/logo.png"/>
+		</a> 
+	</div>
+<!-- ===========================================================================================================================
+	 Menu desktop
+	 =========================================================================================================================== -->
+	<nav id = "desktopMenu"></nav>
+</header>
+
+<!-- ===========================================================================================================================
+	 Bloc de haut de page : titre, fil ariane, version, ...
+	 =========================================================================================================================== -->
+<div id = "topContent">
+	<span id = "breadCrumbTrail">Se repérer : <a href = "#">Nos agences</a></span>
+	<span id = "version">version 1.0</span>
+</div>
+<div id = "content">
+<!-- ===========================================================================================================================
+	 Contenu avec un bloc central et 2 blocs latéraux optionnels
+	 =========================================================================================================================== -->
+	<div class = "template1 clearfix">
+		<div class = "main">
+			<span class = "title">Nos agences</span>
+		</div>
+	</div>
+	<div class = "template1 clearfix">
+		<div class="main">
+			<span class = "title"></span>
+			<div class="div_align_gauche">
+				<p>
+					<label class="largeurIcone"><i class="fa-solid fa-house-circle-check"></i></label>
+					<label>
+					</label>
+				</p>
+				<p><label class="largeurIcone"><i class="fas fa-mobile-screen"></i></label><label></label></p>
+				<p><label class="largeurIcone"><i class="fas fa-envelope"></i></label><label></label></p>
+				<p><label class="largeurIcone"><i class="fas fa-mobile-screen"></i></label><label></label></p>
+				<p><span>
+						<img src="/picture/logo/society/logo-map.png" class="siege"><label>&nbsp;Siège social</label>
+					</span>
+				</p>
+				<table>
+					<tr>
+						<td><img alt = "" class="iconeEquipe" id="logo"/></td>
+						<td>
+							<label></label>
+							<label></label>
+							<label></label>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="div_align_droit">		
+				<iframe width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+<!-- ===========================================================================================================================
+	 Pied de page : Mentions légales, CGU, politique de confidentialité, plan du site, ...
+	 =========================================================================================================================== -->
+	<div>
+		<a class = "floatLeft" href = "#">					
+			<img alt = "youtubeLogo"
+				 src = "./picture/logo/socialNetwork/greyYoutubeLogo.png"
+				 onmouseover = "this.src = './picture/logo/socialNetwork/colorYoutubeLogo.png'"
+				 onmouseout  = "this.src = './picture/logo/socialNetwork/greyYoutubeLogo.png'" />
+		</a>
+		<a class = "floatLeft" href = "#">
+			<img alt = "twitterLogo"
+				 src = "./picture/logo/socialNetwork/greyTwitterLogo.png"
+				 onmouseover = "this.src = './picture/logo/socialNetwork/colorTwitterLogo.png'"
+				 onmouseout  = "this.src = './picture/logo/socialNetwork/greyTwitterLogo.png'" />
+		</a>
+		<a class = "floatLeft" href = "#">
+			<img alt = "facebookLogo"
+					 src = "./picture/logo/socialNetwork/greyFacebookLogo.png"
+					 onmouseover = "this.src = './picture/logo/socialNetwork/colorFacebookLogo.png'"
+					 onmouseout  = "this.src = './picture/logo/socialNetwork/greyFacebookLogo.png'" />
+		</a>
+	</div>			
+	<div>
+		<div>
+			<img alt = "" id="logo" src="./picture/logo/society/icone.png"/> 
+			<span>@copyright 2023 Ag'Immo</span>
+			<span>Tous droits réservés</span>
+		</div>
+		<div>
+			<span>A découvrir</span>
+			<a href = "#">Nos conseils</a>
+			<a href = "#">Nos actualités</a>
+		</div>
+		<div>
+			<span>A propos d'Ag'immo</span>
+			<a href = "#">Qui sommes-nous</a>
+			<a href = "#">Espace presse</a>
+			<a href = "#">Ouvrir une agence</a>
+			<a href = "#">Offres d'emploi</a>
+		</div>
+		<div>
+			<span>Confidentialité</span>
+			<a href = "#">Plan du site</a>
+			<a href = "#">Informations légales</a>
+			<a href = "#">Politique de protection des données</a>
+			<a href = "#">Politique de cookies</a>
+			<a href = "#">Gestion des cookies</a>
+		</div>
+	</div>
+<!-- ===========================================================================================================================
+	 Image de retour en haut de la page  
+	 =========================================================================================================================== -->
+	<img alt	 = ""
+		 src	 = "./picture/general/miscellaneous/topReturn.png" 
+		 onclick = "returnTopOfPage();" />
+		 
+</footer>
+</body>
+</html>
+

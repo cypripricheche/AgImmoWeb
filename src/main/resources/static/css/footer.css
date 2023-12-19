@@ -1,0 +1,234 @@
+/** =============================================================================================================================
+ * Fichier				: footer.css
+ * Objectif(s)			: Positionnement et mise en forme du pied de page (footer)
+ *										-> Suppression des balises HTML5 + homogénéisation avec le header
+ * ==============================================================================================================================
+ */
+
+footer {
+	position:				static;
+}
+
+/* ==============================================================================================================================
+   Mentions légales, CGU, Politique de confidentialité et Plan du site
+   ============================================================================================================================== */
+footer > div:first-of-type {
+	--horizontalPadding:	calc(((100% - var(--desktopScreenWidth)) / 2) + (2 * var(--contentBlockSpace)) + 1px); /* 1px : épaisseur de la bordure */
+	display:				block;
+	position:				static;
+	top:					0;
+	left:					0;
+	height:					calc(var(--standardBlockHeight) - (2 * var(--xSmallSpace)));
+	width:					calc(100% - (2 * var(--horizontalPadding)));
+	padding-top:			var(--xSmallSpace);
+	padding-right:			var(--horizontalPadding);
+	padding-bottom:			var(--xSmallSpace);
+	padding-left:			var(--horizontalPadding);
+	border:					none;
+	margin:					0;
+	background-color:		var(--selectedColor10);
+	color:					var(--selectedColor01);
+}
+
+footer > div:first-of-type > a {
+	height:					calc(var(--standardBlockHeight) - (2 * var(--xSmallSpace)));
+}
+
+footer > div:first-of-type > a.floatRight {
+	float:					right;
+	margin-left:			var(--largeSpace);
+	margin-right:			0;
+}
+
+footer > div:first-of-type > a.floatLeft {
+	float:					left;
+	margin-left:			0;
+	margin-right:			var(--largeSpace);
+}
+
+footer > div:first-of-type > [class^="float"]:hover {
+	color: 					var(--selectedFlashColor);
+}
+
+footer > div:first-of-type > a > img {
+	height: 				calc(var(--standardBlockHeight) - (2 * var(--xSmallSpace)));
+	width:					auto;
+	vertical-align:			top;					/* le texte qui suit sera aligné en haut de l'image, comme s'il n'y avait pas d'image */
+}
+
+footer > div:first-of-type > [class^="float"] > span {
+	position:				relative;
+	top:					5px;					/* afin de faire descendre le texte et qu'il soit centré verticalement par rapport à la hauteur du bloc <div> */
+	margin-left:			5px;
+}
+
+@media screen and (max-width: 880px) {
+	footer > div:first-of-type > a.floatLeft:nth-of-type(3) > span {
+		display:			none;
+	}
+}	
+
+@media screen and (max-width: 780px) {
+	footer > div:first-of-type > a.floatLeft:nth-of-type(2) > span {
+		display:			none;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	footer > div:first-of-type > a.floatLeft:first-of-type > span,
+	footer > div:first-of-type > a.floatRight > span {
+		display:			none;
+	}
+}	
+
+/* ==============================================================================================================================
+   Liens du bas
+   ============================================================================================================================== */
+footer > div:nth-of-type(2) {
+	--horizontalPadding:	calc(((100% - var(--desktopScreenWidth)) / 2) + (2 * var(--contentBlockSpace)) + 1px); /* 1px : épaisseur de la bordure */
+	display:				flex;
+	flex-wrap:				wrap;							/* pour réaliser un retour à la ligne s'il n'y a pas assez de place */
+	position:				static;
+	top:					0;
+	left:					0;
+	height:					auto;
+	width:					calc(100% - (2 * var(--horizontalPadding)));
+	padding-top:			var(--xLargeSpace);
+	padding-right:			var(--horizontalPadding);
+	padding-bottom:			var(--xSmallSpace);
+	padding-left:			var(--horizontalPadding);
+	border:					none;
+	margin:					0;
+	background-color:		var(--selectedColor08);
+	color:					var(--selectedColor04);
+}
+
+footer > div:nth-of-type(2) > div {
+	flex:					1;
+	min-width:				220px;
+	margin-bottom:			20px;
+}
+
+/* Les éléments <a> et <span> sont reformatés (minuscule, majuscule) directement en javascript lors de la génération du contenu */
+
+footer > div:nth-of-type(2) > div > span {
+	display:				block;
+	color: 					var(--selectedColor05);
+}
+
+footer > div:nth-of-type(2) > div:nth-last-of-type(1n + 2) > span:nth-of-type(1n + 2) {	/* à partir du deuxième <span> de tous les blocs <div> sauf le dernier bloc <div> */
+	margin:					20px 0 5px 0;
+}
+
+/*footer > div:nth-of-type(2) > div:last-of-type > span {	 /* les <span> du dernier bloc <div>
+	margin:					20px 0 5px 0;
+}*/
+	
+footer > div:nth-of-type(2) > div > a {
+	display:				block;
+	margin-bottom:			2px;
+	transition:				color 0.3s ease-out;
+}
+
+footer > div:nth-of-type(2) > div > a::before {	/* pour que les balises <a> ne s'affichent pas les unes à côté des autres bien qu'elles soient en inline */
+	content:				"";
+	display:				block;
+}
+
+footer > div:nth-of-type(2) > div > a:hover {
+	color: 					var(--selectedColor01);
+}
+
+footer > div:nth-of-type(2) > div:last-of-type > img:first-of-type { 
+	height:					33px;
+	width:					auto;
+	margin:					0 0 20px 0;
+}
+
+footer > div:nth-of-type(2) > div:last-of-type > img:nth-of-type(1n + 2) { /* les logos Facebook, Twitter, Youtube,... */
+	height: 				28px;
+	width:					auto;
+	margin-right:			var(--xSmallSpace);
+}
+
+footer > div:nth-of-type(2) > div:last-of-type > img:hover {
+	cursor:					pointer;
+}
+
+/* ==============================================================================================================================
+   Gestion des modes tablette et smartphone en cas de redimentionnement
+   ============================================================================================================================== */
+@media screen and (max-width: 1330px) { /* mode tablette */
+	footer > div:first-of-type, footer > div:nth-of-type(2) {
+		--horizontalPadding:	calc(((100% - var(--tabletScreenWidth)) / 2) + (2 * var(--contentBlockSpace)) + 1px); /* 1px : épaisseur de la bordure */
+	}
+}
+
+@media screen and (max-width: 987px) {
+	footer > div:nth-of-type(2) > div {
+		margin-bottom:		50px;
+	}
+}
+
+@media screen and (max-width: 680px) { /* mode smartphone */
+	footer > div:first-of-type, footer > div:nth-of-type(2) {
+		width:				calc(100% - (2 * var(--contentBlockSpace)));
+		padding-right:		var(--contentBlockSpace);
+		padding-left:		var(--contentBlockSpace);
+	}
+	
+	footer > div:nth-of-type(2) {
+		padding-top:		var(--smallSpace);
+		padding-bottom:		var(--smallSpace);
+	}
+	
+	footer > div:nth-of-type(2) > div > a:last-of-type {
+		margin-bottom:		10px;
+	}
+}
+
+/* ==============================================================================================================================
+   logo
+   ============================================================================================================================== */
+footer > div:nth-of-type(2) > div > #logo {
+	width:			40px;
+	height:			40px;
+}
+
+/* ==============================================================================================================================
+   Copyright
+   ============================================================================================================================== */
+footer > div#copyright {
+	display:				block;
+	position:				static;
+	top:					0;
+	left:					0;
+	height:					calc(var(--standardBlockHeight) - var(--mediumSpace));
+	width:					100%;
+	padding:				var(--smallSpace) 0 var(--xSmallSpace) 0;
+	border:					none;
+	margin:					0 0 50px 0;
+	background-color:		var(--selectedColor02);
+	color:					var(--selectedColor09);
+	text-align:				center;
+}
+
+/* ==============================================================================================================================
+   Image de retour vers le haut de la page
+   ============================================================================================================================== */
+footer > img {
+	position:				fixed;
+	bottom:					-40px;						/* modifié en javascript */
+	right:					var(--smallSpace);
+	height: 				40px;
+	width:					auto;
+	cursor:					pointer;
+	opacity:				0.15;
+	transition:				all ease-in 0.4s;			/* all car la transition s'applique aux 2 propriétés bottom et opacity */
+	z-index:				3;							/* apparaît au premier plan par rapport à la page et au bloc de débogage (z-index : 2) */
+}
+
+footer > img:hover {
+	opacity:				0.4;
+}
+

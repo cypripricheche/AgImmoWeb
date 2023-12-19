@@ -1,0 +1,50 @@
+/** =============================================================================================================================
+ * Fichier				: debug.css
+ * Objectif(s)			: Mise en forme du bloc de débogage
+ * ==============================================================================================================================
+ */
+
+div#debug {
+	display:				flex;
+	flex-flow:				row nowrap;
+	position:				fixed;
+	top:					162px;
+	right:					-220px;			/* modifié dynamiquement en javascript */
+	height:					auto;
+	width:					calc(220px - (2 * var(--contentBlockSpace)));
+	padding:				var(--contentBlockSpace);
+	border:					none;
+	border-radius:			15px 0 0 15px;
+	margin:					0;
+	background-color:		var(--selectedColor08);
+	transition:				right ease-in 1s;
+	z-index:				2;				/* apparaît au premier plan par rapport à la page (bloc content) */
+}
+
+div#debug > img {
+	position:				absolute;
+	top:					10px;
+	right:					10px;
+	height:					var(--debugImageHeight);
+	width:					auto;
+}
+
+div#debug > img:hover {
+	cursor:					pointer;
+}
+
+div#debug > div {
+	margin-top:				20px;
+	flex:					1;
+}
+
+div#debug > div:first-of-type {
+	color:					var(--selectedColor04);
+	text-align:				left;
+}
+
+div#debug > div:last-of-type {
+	color:					var(--selectedFlashColor);
+	text-align:				right;
+}
+

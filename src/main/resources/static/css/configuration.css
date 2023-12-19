@@ -1,0 +1,165 @@
+/** =============================================================================================================================
+ * Fichier				: configuration.css
+ * Objectif(s)			: Configuration / paramétrage général du site
+ * ==============================================================================================================================
+ */
+
+:root {
+/* ==============================================================================================================================
+   Police de caractères
+   ============================================================================================================================== */
+	--fontFamily:					Helvetica, Arial, sans-serif;
+	--fontSize:						15px;
+	
+/* ==============================================================================================================================
+   Les blocs
+   ============================================================================================================================== */
+	/* ====================================================
+	   Commun
+	   ==================================================== */
+	--standardBlockHeight:			60px;
+	--xSmallSpace:					5px;
+	--smallSpace:					10px;
+	--mediumSpace:					15px;
+	--largeSpace:					20px;
+	--xLargeSpace:					25px;
+	--xxLargeSpace:					30px;
+	
+	/* ====================================================
+	   Ecran
+	   ==================================================== */
+	--desktopScreenWidth:			1300px;
+	--tabletScreenWidth:			95%;
+	--phoneScreenWidth:				680px;
+	
+	/* ====================================================
+	   Desktop menu
+	   ==================================================== */
+	--menuLeftMargin:				50px;
+	--menuItemWidth:				160px;
+	--menuHighlightItemHeight:		4px;
+	--subMenuWidth:					290px;
+	--subMenuTopHeight:				110px;
+	
+	/* ====================================================
+	   Mobile menu
+	   ==================================================== */
+	--mobileMenuImageHeight:		15px;
+	
+	/* ====================================================
+	   Content
+	   ==================================================== */
+	--contentBlockSpace:			var(--smallSpace);
+	--desktopSideBlockWidth:		250px;
+	--tabletSideBlockWidth:			35%;
+	--gridFixeItemWidth:			350px;
+	--contentBlockHeight:			350px;
+	
+	/* ====================================================
+	   Image
+	   ==================================================== */
+	--imageWidth:					28px;
+
+/* ==============================================================================================================================
+   Couleurs
+   ============================================================================================================================== */
+	--baseColor01:					#FFFFFF;
+	/** Nuances de gris : du plus clair au noir **/
+	--baseColor02:					#FCFCFC;	
+	--baseColor03:					#F8F8F8;	
+	--baseColor04:					#F4F4F4;	
+	--baseColor05:					#F0F0F0;	
+	--baseColor06:					#ECECEC;
+	--baseColor07:					#E8E8E8;
+	--baseColor08:					#E4E4E4;
+	--baseColor09:					#E0E0E0;
+	--baseColor10:					#DCDCDC;
+	--baseColor11:					#D8D8D8;
+	--baseColor12:					#D4D4D4;
+	--baseColor13:					#D0D0D0;
+	--baseColor14:					#CCCCCC;
+	--baseColor15:					#C8C8C8;
+	--baseColor16:					#C4C4C4;
+	--baseColor17:					#C0C0C0;
+	--baseColor18:					#BCBCBC;
+	--baseColor19:					#B8B8B8;
+	--baseColor20:					#B4B4B4;
+	--baseColor21:					#B0B0B0;
+	--baseColor22:					#ACACAC;
+	--baseColor23:					#A8A8A8;
+	--baseColor24:					#A4A4A4;
+	--baseColor25:					#A0A0A0;
+	--baseColor26:					#9C9C9C;
+	--baseColor27:					#989898;
+	--baseColor28:					#949494;
+	--baseColor29:					#909090;
+	--baseColor30:					#8C8C8C;
+	--baseColor31:					#888888;
+	--baseColor32:					#848484;
+	--baseColor33:					#808080;
+	--baseColor34:					#7C7C7C;
+	--baseColor35:					#787878;
+	--baseColor36:					#747474;
+	--baseColor37:					#707070;
+	--baseColor38:					#6C6C6C;
+	--baseColor39:					#686868;
+	--baseColor40:					#646464;
+	--baseColor41:					#606060;
+	--baseColor42:					#5C5C5C;
+	--baseColor43:					#585858;
+	--baseColor44:					#545454;
+	--baseColor45:					#505050;
+	--baseColor46:					#4C4C4C;
+	--baseColor47:					#484848;
+	--baseColor48:					#444444;
+	--baseColor49:					#404040;
+	--baseColor50:					#3C3C3C;
+	--baseColor51:					#383838;
+	--baseColor52:					#343434;
+	--baseColor53:					#303030;
+	--baseColor54:					#2C2C2C;
+	--baseColor55:					#282828;
+	--baseColor56:					#242424;
+	--baseColor57:					#202020;
+	--baseColor58:					#1C1C1C;
+	--baseColor59:					#181818;
+	--baseColor60:					#141414;
+	--baseColor61:					#101010;
+	--baseColor62:					#0C0C0C;
+	--baseColor63:					#080808;
+	--baseColor64:					#040404;
+	--baseColor65:					#000000;
+	/** Autres couleurs **/
+	--baseColor66:					#840808;	/* rouge foncé 					: 132-8-8     */
+	--baseColor67:					#DFACAC;	/* rougé rosé clair				: 223-172-172 */
+	--baseColor68:					#CAC5C5;	/* gris clair					: 202-197-197 */
+	--baseColor69:					#BE0000;	/* rouge foncé					: 190-0-0     */
+	--baseColor70:					#E5224C;	/* rouge zones obligatoires		: 229-34-76	  */
+	--baseColor71:					#E30613;	/* rouge pour le titre location	: 227-6-19    */
+	--baseColor72:					#001825;	/* bleu pour les honoraires		: 0-24-37	  */
+	--baseColor73:					#E8F9EE;	/* gris vert					: 232-249-238 */
+	--baseColor74:					#096C54;	/* Vert foncé					: 9-108-84    */
+	
+	--transparentColor:				"#00000000";
+	--whiteColor:					var(--baseColor01);
+	--blackColor:					var(--baseColor65);
+	--redColor:						var(--baseColor69);
+	--flashColor2:					#74F72D;	/* lime 		*/
+	--flashColor3:					#FF9900;	/* orange 		*/
+	--flashColor4:					#F92222;	/* rouge vif 	*/
+	--placeHolderColor:				var(--baseColor18);	
+	--requiredColor:				var(--baseColor70);
+		
+	--selectedColor01:				var(--whiteColor);
+	--selectedColor02:				var(--baseColor03);
+	--selectedColor03:				var(--baseColor09);
+	--selectedColor04:				var(--baseColor15);
+	--selectedColor05:				var(--baseColor31);
+	--selectedColor06:				var(--baseColor68);
+	--selectedColor07:				var(--baseColor46);
+	--selectedColor08:				var(--baseColor01);
+	--selectedColor09:				var(--baseColor50);
+	--selectedColor10:				var(--baseColor66);
+	--selectedFlashColor:			var(--flashColor4); /* couleur du texte */
+	
+}

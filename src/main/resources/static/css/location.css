@@ -1,0 +1,89 @@
+/** =============================================================================================================================
+ * Fichier				: location.css
+ * Objectif(s)			: Styles CSS propres à la page d'une location
+ * ==============================================================================================================================
+ */
+.colorCostLocation{
+	color:				var(--baseColor71);
+}
+.colorPeriode{
+	color:				var(--baseColor40);
+}
+.colorFrees {
+    color: 				var(--baseColor72);
+}
+.h1{
+	font-weight:		500;
+	font-size:			4.8rem;
+	line-height:		1.29167;
+	font-family:		Arial, sans-serif;
+}	
+.h2 {
+    font-size: 			2rem;
+    line-height: 		1.3;
+    font-family: 		Arial,sans-serif;
+}
+.h3 {
+    font-size: 			1.6rem;
+    line-height: 		1.375;
+    font-family: 		Arial,sans-serif;
+}
+.marginTopNull {
+	margin-top:			0;
+}
+.block {
+    display:			block;
+}
+
+.text-normal {
+    font-weight: 		400;
+}
+.text-sm {
+    font-size: 			1.2rem;
+    line-height: 		1.42857;
+}
+.text-xs {
+    font-size: 			0.8rem;
+    line-height: 		1.33333;
+}
+/* ==============================================================================================================================
+   Indicateur de photos
+   ============================================================================================================================== */
+.photos {
+    display: 			flex;
+    flex-flow: 			row wrap
+}
+.photosBtn {
+    padding: 			.5em 1.5em;
+    font-size: 			1.6rem;
+    line-height: 		1.5;
+}
+.photosBtnColor {
+    border-radius:		30px;
+	background-color: 	var(--baseColor73);
+    color: 				var(--baseColor74);
+	font-weight:		bold;
+}
+/* ==============================================================================================================================
+   Données sur la location
+   ============================================================================================================================== */
+.grid-container {
+  display: 					grid;
+  grid-template-columns: 	auto auto auto auto;
+  padding: 					10px;
+}
+.grid-item {
+  border: 					none;
+  padding: 					10px;
+  text-align: 				center;
+}
+/* ==============================================================================================================================
+   Lien de retour
+   ============================================================================================================================== */
+.icon {
+    font-size: 				1.2rem;
+	font-weight:			bold;
+}
+.icon-color {
+    color: 					var(--baseColor71);
+}

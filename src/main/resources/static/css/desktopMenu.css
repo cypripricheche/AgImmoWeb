@@ -1,0 +1,160 @@
+/** =============================================================================================================================
+ * Fichier				: desktopMenu.css
+ * Objectif(s)			: Positionnement et mise en forme du menu desktop
+  * ==============================================================================================================================
+ */
+
+nav#desktopMenu {
+	display:				block;						/* modifié dynamiquement en javascript */
+	position:				fixed;
+	top:					var(--standardBlockHeight);
+	left:					0;
+	height:					var(--standardBlockHeight);
+	width:					calc(100% - var(--menuLeftMargin));
+	padding:				0 0 0 var(--menuLeftMargin);
+	border:					none;
+	margin:					0;
+	background-color:		var(--selectedColor10);
+	color:					var(--selectedColor01);
+	z-index:				4;							/* apparaît au premier plan par rapport aux autres blocs à l'exception de la barre de progression (z-index : 5) */
+}
+
+nav#desktopMenu > div {
+	float:					left;
+	display:				block;
+	position:				static;
+	top:					0;
+	left:					0;
+	height:					calc(var(--standardBlockHeight) - var(--smallSpace) - var(--menuHighlightItemHeight));
+	width:					var(--menuItemWidth);
+	padding:				0;
+	border-bottom:			var(--menuHighlightItemHeight) solid var(--selectedColor10);
+	margin-top:				var(--smallSpace);
+	text-align:				center;
+}
+
+nav#desktopMenu > div:hover {
+	border-bottom-color:	var(--selectedFlashColor);
+	color:					var(--selectedFlashColor);
+	cursor:					pointer;
+}
+
+nav#desktopMenu > div > span {
+	display:				block;
+	text-transform:			lowerCase;
+}
+
+nav#desktopMenu > div > span::first-letter {
+	text-transform:			uppercase;
+}
+
+/* ==============================================================================================================================
+   Sous menu
+   ============================================================================================================================== */
+nav#desktopMenu > div:hover > div.subMenu {
+	display:				block;
+	cursor:					default;	
+}
+
+nav#desktopMenu > div > div.subMenu {
+	display:				none;
+	position:				absolute;					/* positionné par rapport à son parent positionné le plus proche => le bloc <nav id = "desktopMenu"> */
+	top:					var(--standardBlockHeight);
+	left:					calc(--menuLeftMargin + ((nth-child(1n))-1) * --menuItemWidth);
+	height:					auto;
+	width:					var(--subMenuWidth);
+	padding:				0;
+	border-width:			0 1px 1px 1px;
+	border-style:			solid;
+	border-color:			var(--selectedColor06);
+	margin:					0;
+	box-shadow:				5px 5px 10px var(--selectedColor06);
+	border-radius: 			5px;
+}
+
+nav#desktopMenu div.subMenu > div.bottom {
+	display:				block;
+	position:				static;
+	top:					0;
+	left:					0;
+	height:					auto;
+	min-height:				calc(var(--standardBlockHeight) - 30px);
+	width:					calc(100% - (1 * var(--xSmallSpace)));
+	padding:				var(--xSmallSpace);
+	border:					none;
+	margin:					0;
+	background-color:		var(--selectedColor08);
+	color:					var(--blackColor);
+	text-align:				justify;
+	border-radius: 			5px;
+	border-top-width:		1px;
+	border-top-style:		solid;
+	border-top-color:		var(--selectedColor06);		
+}
+
+nav#desktopMenu div.subMenu > div.top {
+	display:				flex;
+	position:				static;
+	top:					0;
+	left:					0;
+	height:					auto;
+	min-height:				var(--subMenuTopHeight);
+	width:					calc(100% - (1 * var(--xSmallSpace)));
+	padding:				var(--xSmallSpace);
+	border:					none;
+	margin:					0;
+	background-color:		var(--selectedColor01);
+	color:					var(--blackColor);
+	text-align:				left;
+}
+
+nav#desktopMenu div.subMenu > div.top > div {
+	flex:					1;
+}
+
+nav#desktopMenu div.subMenu > div.top > div:first-of-type {
+	padding:				0px 5px 0px 0px;
+}
+
+nav#desktopMenu div.subMenu > div.top > div:nth-of-type(2) {
+	padding:				0px 5px 0px 5px;
+}
+
+nav#desktopMenu div.subMenu > div.top > div:last-of-type {
+	padding:				0px 0px 0px 5px;
+}
+
+nav#desktopMenu div.subMenu > div.top span:first-of-type {			/* le titre du menu de niveau 2 */
+	display:				block;
+	margin:					var(--xSmallSpace) 0 var(--smallSpace) 0;
+	text-transform:			uppercase;
+	text-align:				center;
+	color:					var(--blackColor);
+	margin-bottom:			20px;
+    font-weight:			bold;
+}
+
+nav#desktopMenu div.subMenu > div.top > div > a {
+	display:				block;
+/*  text-transform:			lowerCase; */
+	transition:				color 0.3s ease-out;
+}
+
+/* On affiche les liens hypertextes en inline :
+	-> pour éviter que les liens s'affichent les uns à côté des autres, on ajoute un bloc vierge avant chaque lien à l'aide du pseudo-élément ::before.
+	-> le pseudo-élément ::first-letter n'est plus opérationnel. On reformate donc les liens hypertextes (en minuscule avec la première lettre en majuscule) en javascript.
+	
+nav#desktopMenu div.subMenu > div.top > div > a::first-letter {
+	text-transform:			uppercase;
+}
+*/
+
+nav#desktopMenu div.subMenu > div.top > div > a::before {	/* pour que les balises <a> ne s'affichent pas les unes à côté des autres bien qu'elles soient en inline */
+	content:				"";
+	display:				block;
+}
+
+nav#desktopMenu div.subMenu > div.top > div > a:hover {
+	color: 					var(--selectedColor01);
+}
+

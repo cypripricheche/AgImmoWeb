@@ -1,0 +1,30 @@
+
+
+
+/** Mises en forme du texte **/
+.enGras{
+	font-weight:	bold;
+}
+.color_red{
+	color:			var(--redColor);
+}
+.align_droite{
+	text-align:		right;
+}
+/** Mises en forme des blocks DIV **/
+.div_align_droit{
+	width:			50%;
+	float:			right;
+}
+.div_align_gauche{
+	width:			50%;
+	float:			left;
+}
+.siege{
+	width: 			40px;
+	height: 		40px;
+}
+.largeurIcone{
+	display: 		inline-block;
+	width: 			50px;
+}

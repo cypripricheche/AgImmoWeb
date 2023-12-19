@@ -1,0 +1,36 @@
+/** =============================================================================================================================
+ * Fichier				: generalLayout.css
+ * Objectif(s)			: Mise en forme générale du site
+ * ==============================================================================================================================
+ */
+
+/* Les différents "modes" d'affichage
+   mobile		500px	-> 680px		largeur 100%;
+   tablet		681px	-> 1330px		largeur en %
+   desktop		1331px	-> no limit		largeur du contenu fixe avec des marges automatiques
+*/
+
+body {
+	margin:					0;
+	background-color:		var(--selectedColor01);
+	font-family:			var(--fontFamily);
+	font-size:				var(--fontSize);
+	font-weight:			normal;
+}
+
+a {
+	text-decoration:		none;
+	color:					inherit;
+}
+
+ul {
+	list-style-type:		none;
+	padding:				0;			/* sinon, padding-left: 40px par défaut */
+	margin:					0;			/* sinon, margin-top: 16px et margin-bottom: 16px par défaut */
+}
+
+.clearfix::after {						/* ajout d'un bloc vide après le bloc container afin d'annuler le flottement des éléments précédents. Remplace la balise <hr/> que je gérais précédemment */
+	display:				block;
+	clear:					both;
+	content:				"";
+}

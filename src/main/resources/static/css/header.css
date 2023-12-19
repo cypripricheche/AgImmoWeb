@@ -1,0 +1,100 @@
+/** =============================================================================================================================
+ * Fichier				: header.css
+ * Objectif(s)			: Positionnement et mise en forme de l'entête de la page : le logo + les liens Mon compte, Nous contacter, Nous trouver et Forum 
+ * ==============================================================================================================================
+ */
+
+header {	/* Le bloc <header> n'est qu'un conteneur vide car tous les éléments définis à l'intérieur sont positionnés en fixe */
+	position:				static;
+	top:					0;
+	left:					0;
+	height:					0;
+	width:					0;
+	padding:				0;
+	border:					none;
+	margin:					0;
+}
+
+header > div:first-of-type {
+	display:				block;
+	position:				fixed;
+	top:					0;
+	left:					0;
+	height:					calc(var(--standardBlockHeight) - (2 * var(--xSmallSpace)));
+	width:					calc(100% - (2 * var(--smallSpace)));
+	padding:				var(--xSmallSpace) var(--smallSpace) var(--xSmallSpace) var(--smallSpace);
+	border:					none;
+	margin:					0;
+	background-color:		var(--selectedColor10);
+	color:					var(--selectedColor01);
+	z-index:				7;						/* 5 initialement - pour être toujours au premier plan, notamment par rapport au menu mobile de niveau 1 */
+}
+
+header > div:first-of-type > [class^="float"] {		/* n'immporte quel élément (<a> et <img> dans notre cas) qui est associé à une classe dont le nom commence par float */
+	height:					calc(var(--standardBlockHeight) - (2 * var(--xSmallSpace)));
+}
+
+header > div:first-of-type > .floatRight {
+	float:					right;
+	margin-left:			var(--largeSpace);
+	margin-right:			0;
+}
+
+header > div:first-of-type > .floatLeft {
+	float:					left;
+	margin-left:			0;
+	margin-right:			var(--largeSpace);
+}
+
+header > div:first-of-type > [class^="float"]:hover {
+	color: 					var(--selectedFlashColor);
+}
+
+header > div:first-of-type img {
+	height: 				calc(var(--standardBlockHeight) - (2 * var(--xSmallSpace)));	/* la hauteur de l'image relative au logo écrase cette valeur */
+	width:					auto;
+	vertical-align:			top;					/* le texte qui suit sera aligné en haut de l'image, comme s'il n'y avait pas d'image */
+}
+
+header > div:first-of-type > [class^="float"] > span {
+	position:				relative;
+	top:					5px;					/* afin de faire descendre le texte et qu'il soit centré verticalement par rapport à la hauteur du bloc <div> */
+	margin-left:			5px;
+}
+
+header > div:first-of-type > img#logo {
+	position:				absolute;
+	top:					2px;
+	left:					52px;
+	height:					33px;
+	width:					auto;
+}
+
+header > div:first-of-type > img#logo:hover {
+	cursor:					pointer;
+}
+
+@media screen and (max-width: 970px) {
+	header > div:first-of-type > a:nth-last-of-type(1) > span {
+		display:			none;
+	}
+}
+
+@media screen and (max-width: 920px) {
+	header > div:first-of-type > a:nth-last-of-type(2) > span {
+		display:			none;
+	}
+}
+
+@media screen and (max-width: 820px) {
+	header > div:first-of-type > a:nth-last-of-type(3) > span {
+		display:			none;
+	}
+}	
+
+@media screen and (max-width: 700px) {
+	header > div:first-of-type > a:nth-last-of-type(4) > span {
+		display:			none;
+	}
+}
+
